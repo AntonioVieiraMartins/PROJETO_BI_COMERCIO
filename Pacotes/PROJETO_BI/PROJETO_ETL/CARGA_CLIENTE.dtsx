@@ -11,36 +11,10 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{7C7133BC-0262-461F-8920-F5073DFD57F7}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{E404D27A-5B92-4841-85D2-682462D9B780}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{A877C52F-A338-4346-8938-91809237D898}"
-      DTS:ObjectName="LocalHost.COMERCIO_OLTP">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=COMERCIO_OLTP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LocalHost.COMERCIO_STAGE]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{432C15E0-40DB-4F55-B189-16602FE7F1C8}"
-      DTS:ObjectName="LocalHost.COMERCIO_STAGE">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=COMERCIO_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -342,8 +316,8 @@
               <connections>
                 <connection
                   refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
+                  connectionManagerID="{A877C52F-A338-4346-8938-91809237D898}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.COMERCIO_OLTP 1]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -557,8 +531,8 @@
               <connections>
                 <connection
                   refId="Package\Tarefa Fluxo de Dados\Origem OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
+                  connectionManagerID="{A877C52F-A338-4346-8938-91809237D898}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.COMERCIO_OLTP 1]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -796,8 +770,8 @@ where [refTable].[ID_CLIENTE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Tarefa Fluxo de Dados\Pesquisa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.COMERCIO_OLTP]"
+                  connectionManagerID="{A877C52F-A338-4346-8938-91809237D898}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.COMERCIO_OLTP 1]"
                   description="O gerenciador de conexões usado para acessar dados de pesquisa."
                   name="OleDbConnection" />
               </connections>
@@ -977,8 +951,8 @@ where [refTable].[ID_CLIENTE] = ?</property>
               <connections>
                 <connection
                   refId="Package\Tarefa Fluxo de Dados\ST_CLIENTE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.COMERCIO_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.COMERCIO_STAGE]"
+                  connectionManagerID="{432C15E0-40DB-4F55-B189-16602FE7F1C8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.COMERCIO_STAGE 1]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -1197,13 +1171,13 @@ where [refTable].[ID_CLIENTE] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="210.4,41.6"
-          Id="Package\TRUNCATE_STAGE_AREA"
-          TopLeft="78.3333302206464,110.933334214952" />
-        <NodeLayout
           Size="184,41.6"
           Id="Package\Tarefa Fluxo de Dados"
           TopLeft="413.333316908943,106.600000847181" />
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\TRUNCATE_STAGE_AREA"
+          TopLeft="78.3333302206464,110.933334214952" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
           TopLeft="288.733330220646,129.566667531067">
@@ -1400,25 +1374,12 @@ where [refTable].[ID_CLIENTE] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\Origem OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarefa Fluxo de Dados\Pesquisa">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1428,7 +1389,7 @@ where [refTable].[ID_CLIENTE] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1450,6 +1411,19 @@ where [refTable].[ID_CLIENTE] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Tarefa Fluxo de Dados\ST_CLIENTE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarefa Fluxo de Dados\Origem OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
