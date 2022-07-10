@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{AA63BE99-8F81-4A44-B247-B2B190AE97B3}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B2C857E3-17F9-4F5E-AB78-1E1318F57768}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -606,39 +606,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="176,41.6"
+          Size="176,41.3333333333334"
           Id="Package\Tarefa Executar SQL"
-          TopLeft="132.499994734923,172.466668037309" />
+          TopLeft="131.874994744236,172.466668037309" />
         <NodeLayout
-          Size="184,41.6"
+          Size="184,41.3333333333334"
           Id="Package\Tarefa Fluxo de Dados"
           TopLeft="138.333327836461,281.666668905152" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="220.499994734923,214.066668037309">
+          TopLeft="219.874994744236,213.800001370642">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.83333310153759,67.6000008678436"
+              EndConnector="10.4583330922248,67.8666675345096"
               Start="0,0"
-              End="9.83333310153759,60.1000008678436">
+              End="10.4583330922248,60.3666675345096">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.8000004339218" />
+                    End="0,29.9333337672548" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.8000004339218"
-                    Point2="0,33.8000004339218"
-                    Point3="4,33.8000004339218" />
+                    Point1="0,29.9333337672548"
+                    Point2="0,33.9333337672548"
+                    Point3="4,33.9333337672548" />
                   <mssgle:LineSegment
-                    End="5.83333310153759,33.8000004339218" />
+                    End="6.45833309222476,33.9333337672548" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.83333310153759,33.8000004339218"
-                    Point2="9.83333310153759,33.8000004339218"
-                    Point3="9.83333310153759,37.8000004339218" />
+                    Point1="6.45833309222476,33.9333337672548"
+                    Point2="10.4583330922248,33.9333337672548"
+                    Point3="10.4583330922248,37.9333337672548" />
                   <mssgle:LineSegment
-                    End="9.83333310153759,60.1000008678436" />
+                    End="10.4583330922248,60.3666675345096" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -753,14 +753,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarefa Fluxo de Dados\Origem OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarefa Fluxo de Dados\Destino OLE DB">
     <Properties>
       <Property>
@@ -770,6 +762,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarefa Fluxo de Dados\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
